@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+.contain {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* navbar */
+#navbar {
+  width: 84%;
+  height: 80px;
+  background-color: #201D3A;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 1rem;
+  padding: 0 8% 0 8%;
+}
+.nav_elem {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.nav_elem > p {
+  color: #d5d5d5;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.nav_elem > p > span {
+  color: #fff;
+}
+.nav_elem > button {
+  width: 100px;
+  height: 50px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px #fff solid;
+  border-radius: 5px;
+  font-size: large;
+  padding: 5px;
+}
+.nav_elem > button:hover {
+  color: #002020;
+  background-color: #fff;
+}
+
+/* Fight Field */
+#fightField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
+  width: 80%;
+  height: calc(70vh - 80px);
+  margin-top: 80px;
+}
+
+.fight_elem {
+  margin: 20px;
+  width: 100%;
+}
+.enemy_elem {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.enemy_elem > img {
+  width: 140px;
+  height: 140px;
+  border: 10px silver solid;
+  border-radius: 50%;
+  padding: 10px;
+  animation: float 6s ease-in-out infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.our_elem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.our_elem > img {
+  width: 140px;
+  height: 140px;
+  border: 10px silver solid;
+  border-radius: 50%;
+  padding: 5px;
+}
+.our_elem > img:hover {
+  border-color: tomato;
+}
+.our_elem > div {
+  width: 140px;
+  height: 140px;
+  border: 10px silver solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.our_elem > div > input {
+  width: 70%;
+  outline: none;
+  border: 0px;
+  border-bottom: 1px #707070 solid;
+  margin: 10px 0 10px 0;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* login */
+#login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+#login > form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 400px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 20px;
+}
+#login > form > img {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+}
+#login > form > label {
+  margin-bottom: 30px;
+}
+#login > form > input {
+  width: 60%;
+  outline: none;
+  border: 0px;
+  border-bottom: 1px #707070 solid;
+  margin: 20px 0 20px 0;
+  font-size: 20px;
+}
+#login > form > button {
+  color: #4f4f4f;
+  background-color: transparent;
+  border: 1px #4f4f4f solid;
+  border-radius: 5px;
+  font-size: large;
+  padding: 5px;
+  margin: 20px 0 20px 0;
+}
+#login > form > button:hover {
+  cursor: pointer;
 }
