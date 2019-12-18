@@ -15,7 +15,7 @@ const App = () => {
   const [enemy, setEnemy] = useState(-1);
   const [isLogin, setLogin] = useState(false);
 
-  const ContractAddr = '0x7db13DAD61789890b5Bbb03B35a1a4c2F84c5dc9';
+  const ContractAddr = '__YOUR_CONTRACT_ADDRESS';
   let Provider = null, Contract = null;
 
   useEffect(() => {
@@ -29,14 +29,14 @@ const App = () => {
     // get token
     const timer = setInterval(async () => {
       if (addr === '') return;
-      await Contract.methods.balanceOf(addr)
-        .call().then(d => setToken(parseInt(d, 10)));
+      ////////////////////
+      // get your token //
+      ////////////////////
     }, 1000);
     // get event
-    Contract.events.mora_log({ fromBlock: 0 })
-      .on('data', (event) => {
-        setEnemy(parseInt(event.returnValues['3'], 10));
-      });
+    //////////////////////////
+    // get event for result //
+    //////////////////////////
     // clear
     return () => clearInterval(timer);
   });
@@ -62,19 +62,16 @@ const App = () => {
         console.info(`tx: ${receipt.transactionHash}`)
         setSelected(-1);
         return receipt.transactionHash;
-      })
-  .then((tx) => {
-
-  })
+      });
   };
 
 const initialize = async () => {
-  // provider
-  Provider = new Web3(
-    new Web3.providers.WebsocketProvider('ws://127.0.0.1:9545')
-  )
-  // contract
-  Contract = new Provider.eth.Contract(TRUFFLE.abi, ContractAddr);
+  //////////////
+  // provider //
+  //////////////
+  //////////////
+  // contract //
+  //////////////
 };
 
 return (
