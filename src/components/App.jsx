@@ -62,10 +62,7 @@ const App = () => {
         console.info(`tx: ${receipt.transactionHash}`)
         setSelected(-1);
         return receipt.transactionHash;
-      })
-  .then((tx) => {
-
-  })
+      });
   };
 
 const initialize = async () => {
